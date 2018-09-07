@@ -24,7 +24,6 @@ public class LdapController {
         return odmPersonRepo.findByCn(cn);
     }
 
-
     @RequestMapping(value = "/findAll",method = RequestMethod.GET)
     public List<Person> findAll(){
         return odmPersonRepo.findAll();
@@ -38,8 +37,6 @@ public class LdapController {
         person.setUserPassword(userPassworld);
         return odmPersonRepo.create(person);
     }
-
-
 
     @PostMapping(value = "/update")
     public Person update(@RequestParam(name = "cn") String cn,@RequestParam(name = "sn") String sn,@RequestParam(name = "userPassword") String userPassworld){
